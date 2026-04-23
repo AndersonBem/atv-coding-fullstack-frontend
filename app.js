@@ -107,10 +107,12 @@ window.editCliente = async function (id) {
     cancelEdit.classList.remove('hidden');
     showMessage('Editando cliente.');
 
-    form.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }, 50);
   } catch (error) {
     showMessage(error.message, true);
   }
