@@ -194,6 +194,18 @@ button.secondary:hover {
   background: var(--danger-hover);
 }
 
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  flex: 1;
+}
+
+
 #message {
   min-height: 24px;
   font-weight: 600;

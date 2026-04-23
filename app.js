@@ -1,4 +1,4 @@
-const API_URL = 'https://desafio-app-clientes.onrender.com/api';
+const API_URL = 'https://atv-coding-fullstack-frontend.onrender.com';
 
 const form = document.getElementById('cliente-form');
 const clienteId = document.getElementById('cliente-id');
@@ -74,7 +74,13 @@ async function saveCliente(data) {
     body: JSON.stringify(data)
   });
 
-  const result = await response.json();
+  let result = {};
+
+  try {
+    result = await response.json();
+  } catch (error) {
+    throw new Error('Erro inesperado do servidor.');
+  }
 
   if (!response.ok) {
     throw new Error(result.message || 'Erro ao salvar cliente.');
@@ -100,6 +106,11 @@ window.editCliente = async function (id) {
     formTitle.textContent = 'Editar cliente';
     cancelEdit.classList.remove('hidden');
     showMessage('Editando cliente.');
+
+    form.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   } catch (error) {
     showMessage(error.message, true);
   }
