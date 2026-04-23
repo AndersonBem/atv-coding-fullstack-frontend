@@ -1,4 +1,4 @@
-const API_URL = 'https://atv-coding-fullstack-frontend.onrender.com';
+const API_URL = 'https://desafio-app-clientes.onrender.com/api';
 
 const form = document.getElementById('cliente-form');
 const clienteId = document.getElementById('cliente-id');
